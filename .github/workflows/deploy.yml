@@ -24,10 +24,8 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      # Served from the root of the custom domain, so no basePath.
       - run: npm run build
-        env:
-          # Serves the site from https://<user>.github.io/<repo>/
-          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
