@@ -11,7 +11,7 @@ export default function Home() {
       <div className="w-full max-w-5xl px-4 relative">
         <Header />
         <div className="pt-4 mx-auto w-full font-Poppins">
-          <RoleList heading="NOW" roles={now} first />
+          <RoleList heading="CURRENTLY" roles={now} first />
           <RoleList heading="PREVIOUSLY" roles={previously} />
         </div>
         <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-screen -z-10 pointer-events-none hero-lines" />

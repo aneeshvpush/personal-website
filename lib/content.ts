@@ -6,7 +6,22 @@ export type Role = {
   href: string;
   detail?: string;
   color: string; // placeholder logo color, swap for a real logo later
+  logo?: "block-i";
+  image?: string; // path under /public, e.g. "/logo.png"
+  bg?: string; // background color behind an image logo, so it stands out on the dark page
 };
+
+// One organization with several unrelated roles, shown as a header with the roles nested under it.
+export type RoleGroup = {
+  org: string;
+  href: string;
+  color: string;
+  logo?: "block-i";
+  image?: string; // path under /public, e.g. "/logo.png"
+  roles: { title: string; detail?: string }[];
+};
+
+export type Entry = Role | RoleGroup;
 
 export type Project = {
   name: string;
@@ -28,13 +43,22 @@ export const profile = {
   },
 };
 
-export const now: Role[] = [
-  { title: "Software Engineer Intern", org: "Company One", href: "https://example.com", detail: "Team or focus area", color: "#3b82f6" },
-  { title: "Software Engineer", org: "Company Two", href: "https://example.com", detail: "Team or focus area", color: "#ef4444" },
-  { title: "Computer Science - 4.0/4.0 GPA", org: "Your University", href: "https://example.com", color: "#22c55e" },
+export const now: Entry[] = [
+  { title: "Aerospace Engineering - 3.84/4.0 GPA", org: "University of Illinois Urbana-Champaign", href: "https://illinois.edu", color: "#FF5F05", logo: "block-i" },
+  {
+    org: "The Illinois Space Society",
+    href: "https://www.illinoisspacesociety.org/",
+    color: "#facc15",
+    image: "/illinois-space-society.png",
+    roles: [
+      { title: "Treasurer" },
+      { title: "Spaceshot High-Powered Rocketry Member" },
+    ],
+  },
+  { title: "VP of Community and Outreach", org: "Science Olympiad at Illinois", href: "https://sciolyatillinois.org/", color: "#FF5F05", image: "/science-olympiad-illinois.webp", bg: "#ffffff" },
 ];
 
-export const previously: Role[] = [
+export const previously: Entry[] = [
   { title: "Founder", org: "Startup", href: "https://example.com", color: "#a855f7" },
   { title: "Software Engineer Intern", org: "Company Three", href: "https://example.com", detail: "Team or focus area", color: "#f97316" },
   { title: "Something you're proud of", org: "Platform", href: "https://example.com", color: "#e5e5e5" },
