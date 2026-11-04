@@ -19,14 +19,12 @@ export type Project = {
 };
 
 export const profile = {
-  name: "Your Name",
-  title: "Software Engineer",
+  name: "Aneesh Pushparaj",
+  title: "Aerospace Engineer and Computer Scientist",
   email: "you@example.com",
   socials: {
-    linkedin: "https://www.linkedin.com/in/your-handle/",
-    github: "https://github.com/your-handle",
-    instagram: "https://instagram.com/your-handle",
-    x: "https://x.com/your-handle",
+    linkedin: "https://www.linkedin.com/in/aneesh-pushparaj/",
+    github: "https://github.com/aneeshvpush",
   },
 };
 

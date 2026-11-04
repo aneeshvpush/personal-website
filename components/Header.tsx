@@ -1,12 +1,10 @@
-import { FaGithub, FaInstagram, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import Reveal from "./Reveal";
 import { profile } from "@/lib/content";
 
 const links = [
   { label: "LinkedIn", href: profile.socials.linkedin, icon: <FaLinkedinIn />, bg: "bg-[#0a66c2]" },
   { label: "GitHub", href: profile.socials.github, icon: <FaGithub />, bg: "bg-neutral-800" },
-  { label: "Instagram", href: profile.socials.instagram, icon: <FaInstagram />, bg: "bg-gradient-to-br from-yellow-500 via-pink-600 to-purple-700" },
-  { label: "X", href: profile.socials.x, icon: <FaXTwitter />, bg: "bg-black" },
 ];
 
 export default function Header() {
