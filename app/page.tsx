@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import RoleList from "@/components/RoleList";
 import ProjectCard from "@/components/ProjectCard";
-import PhotoStrip from "@/components/PhotoStrip";
 import Reveal from "@/components/Reveal";
 import { now, previously, profile, projects } from "@/lib/content";
 
@@ -39,7 +38,6 @@ export default function Home() {
 
       <div className="relative w-full flex flex-col items-center">
         <div className="relative z-10 w-full flex flex-col items-center">
-          <PhotoStrip />
           <section className="max-w-5xl w-full px-4 py-12 font-Poppins">
             <Reveal>
               <div className="flex flex-col gap-3 text-lighttext3 md:text-sm text-xs text-left md:text-center md:items-center">

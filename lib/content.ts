@@ -59,9 +59,10 @@ export const now: Entry[] = [
 ];
 
 export const previously: Entry[] = [
-  { title: "Founder", org: "Startup", href: "https://example.com", color: "#a855f7" },
-  { title: "Software Engineer Intern", org: "Company Three", href: "https://example.com", detail: "Team or focus area", color: "#f97316" },
-  { title: "Something you're proud of", org: "Platform", href: "https://example.com", color: "#e5e5e5" },
+  { title: "Sustainability Product Intern", org: "Marketing Card Technology", href: "https://www.mctechnology.com/", color: "#07225e", image: "/mct.png" },
+  { title: "Engineering Team Lead", org: "NASA L'SPACE", href: "https://lspace.asu.edu/", color: "#000000", image: "/lspace.png" },
+  { title: "RASC-AL Manufacturing and Construction Member", org: "Illinois Space Society", href: "https://www.illinoisspacesociety.org/", color: "#facc15", image: "/illinois-space-society.png" },
+  { title: "Community Outreach Director", org: "UChicago Science Olympiad", href: "https://uchicagoscio.github.io/", color: "#800000", image: "/uchicago.png", bg: "#ffffff" },
 ];
 
 export const projects: Project[] = [
@@ -72,5 +73,3 @@ export const projects: Project[] = [
   { name: "Project Five", role: "Software Engineer", year: "2025", href: "https://example.com", description: "One sentence on what you built and the impact it had.", from: "#134e4a", to: "#5eead4" },
   { name: "Project Six", role: "Solo Project", year: "2024", href: "https://example.com", description: "One sentence on what you built and the impact it had.", from: "#78350f", to: "#fde047" },
 ];
-
-export const photoColors = ["#27272a", "#3f3f46", "#52525b", "#3f3f46", "#27272a"];

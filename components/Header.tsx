@@ -2,6 +2,8 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import Reveal from "./Reveal";
 import { profile } from "@/lib/content";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const links = [
   { label: "LinkedIn", href: profile.socials.linkedin, icon: <FaLinkedinIn />, bg: "bg-[#0a66c2]" },
   { label: "GitHub", href: profile.socials.github, icon: <FaGithub />, bg: "bg-neutral-800" },
@@ -12,14 +14,12 @@ export default function Header() {
     <div className="lg:pt-32 md:pt-20 pt-10 mx-auto w-full font-Poppins">
       <div className="flex items-center gap-2">
         <Reveal>
-          {/* Placeholder avatar: drop your photo in /public and swap this for an <img>. */}
-          <div className="h-20 w-20 md:h-24 md:w-24 rounded-lg bg-gradient-to-br from-neutral-700 to-neutral-900 flex items-center justify-center text-2xl font-medium text-neutral-300">
-            {profile.name
-              .split(" ")
-              .map((p) => p[0])
-              .join("")
-              .slice(0, 2)}
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${basePath}/profile.jpg`}
+            alt={profile.name}
+            className="h-20 w-20 md:h-24 md:w-24 rounded-lg object-cover block"
+          />
         </Reveal>
         <div className="flex flex-col justify-center flex-1">
           <Reveal>
