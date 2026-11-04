@@ -40,7 +40,7 @@ export type MediaItem = string | { video: string };
 
 export const profile = {
   name: "Aneesh Pushparaj",
-  title: "Aerospace Engineer and Computer Scientist",
+  title: "Student, Engineer, Researcher",
   email: "aneeshvpushparaj@gmail.com",
   socials: {
     linkedin: "https://www.linkedin.com/in/aneesh-pushparaj/",
@@ -66,7 +66,7 @@ export const now: Entry[] = [
 export const previously: Entry[] = [
   { title: "Sustainability Product Intern", org: "Marketing Card Technology", href: "https://www.mctechnology.com/", color: "#07225e", image: "/mct.png" },
   { title: "Engineering Team Lead", org: "NASA L'SPACE", href: "https://lspace.asu.edu/", color: "#000000", image: "/lspace.png" },
-  { title: "RASC-AL Manufacturing and Construction Member", org: "Illinois Space Society", href: "https://www.illinoisspacesociety.org/", color: "#facc15", image: "/illinois-space-society.png" },
+  { title: "RASC-AL Manufacturing and Construction Member", org: "The Illinois Space Society", href: "https://www.illinoisspacesociety.org/", color: "#facc15", image: "/illinois-space-society.png" },
   { title: "Community Outreach Director", org: "UChicago Science Olympiad", href: "https://uchicagoscio.github.io/", color: "#800000", image: "/uchicago.png", bg: "#ffffff" },
 ];
 
@@ -96,8 +96,4 @@ export const projects: Project[] = [
       "/projects/lisa-t-cutaway-2.jpg",
     ],
   },
-  { name: "Project Three", role: "Software Engineer Intern", year: "2026", href: "https://example.com", description: "One sentence on what you built and the impact it had.", from: "#7f1d1d", to: "#fb923c" },
-  { name: "Project Four", role: "Solo Project", year: "2025", href: "https://example.com", description: "One sentence on what you built and the impact it had.", from: "#312e81", to: "#c084fc" },
-  { name: "Project Five", role: "Software Engineer", year: "2025", href: "https://example.com", description: "One sentence on what you built and the impact it had.", from: "#134e4a", to: "#5eead4" },
-  { name: "Project Six", role: "Solo Project", year: "2024", href: "https://example.com", description: "One sentence on what you built and the impact it had.", from: "#78350f", to: "#fde047" },
 ];
