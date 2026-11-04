@@ -21,7 +21,7 @@ export default function Home() {
           <div className="mx-auto px-4 flex items-center mb-6">
             <div>
               <h2 className="font-Poppins text-3xl font-medium text-white/90">Engineering</h2>
-              <h2 className="font-Poppins text-lighttext2">Products that I&apos;ve launched.</h2>
+              <h2 className="font-Poppins text-lighttext2">Projects that I&apos;ve developed.</h2>
             </div>
           </div>
         </Reveal>
@@ -41,7 +41,7 @@ export default function Home() {
           <section className="max-w-5xl w-full px-4 py-12 font-Poppins">
             <Reveal>
               <div className="flex flex-col gap-3 text-lighttext3 md:text-sm text-xs text-left md:text-center md:items-center">
-                <p>Want to build something together or just want to say hi?</p>
+                <p>Want to have a conversation?</p>
                 <a
                   href={`mailto:${profile.email}`}
                   className="text-neutral-200 underline decoration-neutral-300 decoration-[3px] underline-offset-4 whitespace-nowrap self-start md:self-center"

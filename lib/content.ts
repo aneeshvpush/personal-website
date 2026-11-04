@@ -27,16 +27,21 @@ export type Project = {
   name: string;
   role: string;
   year: string;
-  href: string;
+  href?: string; // omit when there's nothing to link to
   description: string;
   from: string; // placeholder preview gradient
   to: string;
+  images?: MediaItem[]; // shown as a gallery instead of the gradient
+  icon?: "drone" | "satellite";
 };
+
+// A path under /public for an image, or { video } for a click-to-play video.
+export type MediaItem = string | { video: string };
 
 export const profile = {
   name: "Aneesh Pushparaj",
   title: "Aerospace Engineer and Computer Scientist",
-  email: "you@example.com",
+  email: "aneeshvpushparaj@gmail.com",
   socials: {
     linkedin: "https://www.linkedin.com/in/aneesh-pushparaj/",
     github: "https://github.com/aneeshvpush",
@@ -44,7 +49,7 @@ export const profile = {
 };
 
 export const now: Entry[] = [
-  { title: "Aerospace Engineering - 3.84/4.0 GPA", org: "University of Illinois Urbana-Champaign", href: "https://illinois.edu", color: "#FF5F05", logo: "block-i" },
+  { title: "Aerospace Engineering - 3.84/4.00 GPA", org: "University of Illinois Urbana-Champaign", href: "https://illinois.edu", color: "#FF5F05", logo: "block-i" },
   {
     org: "The Illinois Space Society",
     href: "https://www.illinoisspacesociety.org/",
@@ -66,8 +71,31 @@ export const previously: Entry[] = [
 ];
 
 export const projects: Project[] = [
-  { name: "Project One", role: "Software Engineer", year: "2026", href: "https://example.com", description: "One sentence on what you built and the impact it had.", from: "#1e3a8a", to: "#38bdf8" },
-  { name: "Project Two", role: "Founder", year: "2026", href: "https://example.com", description: "One sentence on what you built and the impact it had.", from: "#14532d", to: "#a3e635" },
+  {
+    name: "Quadcopter Drone CAD Design",
+    role: "Solo Project",
+    year: "2026",
+    description: "Designed a 4S quadcopter in CAD, from its carbon-fiber frame to the stacked electronics and battery mount.",
+    from: "#7f1d1d",
+    to: "#ef4444",
+    icon: "drone",
+    images: ["/projects/drone-side.jpg", "/projects/drone-top.jpg", "/projects/drone-under.jpg", "/projects/drone-detail.jpg"],
+  },
+  {
+    name: "LISA-T CubeSat CAD Design",
+    role: "Solo Project",
+    year: "2026",
+    description: "Modeled a NASA LISA-T-inspired CubeSat in CAD with all of its components, from the deployable solar array and antenna to the avionics stack and batteries.",
+    from: "#0c1a3a",
+    to: "#38bdf8",
+    icon: "satellite",
+    images: [
+      { video: "/projects/lisa-t-deploy.mp4" },
+      "/projects/lisa-t-deployed.jpg",
+      "/projects/lisa-t-cutaway-1.jpg",
+      "/projects/lisa-t-cutaway-2.jpg",
+    ],
+  },
   { name: "Project Three", role: "Software Engineer Intern", year: "2026", href: "https://example.com", description: "One sentence on what you built and the impact it had.", from: "#7f1d1d", to: "#fb923c" },
   { name: "Project Four", role: "Solo Project", year: "2025", href: "https://example.com", description: "One sentence on what you built and the impact it had.", from: "#312e81", to: "#c084fc" },
   { name: "Project Five", role: "Software Engineer", year: "2025", href: "https://example.com", description: "One sentence on what you built and the impact it had.", from: "#134e4a", to: "#5eead4" },
