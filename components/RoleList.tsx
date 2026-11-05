@@ -42,6 +42,19 @@ function OrgLink({ org, href }: { org: string; href: string }) {
   );
 }
 
+// A role nested one level beneath its organization or parent row.
+function SubRow({ title, detail }: { title: string; detail?: string }) {
+  return (
+    <div className="flex row items-start md:text-base text-sm ml-6">
+      <CornerDownRight className="mr-2 w-4 h-4 text-lighttext shrink-0 mt-1" />
+      <h3 className="text-lighttext3">
+        {title}
+        {detail ? ` - ${detail}` : null}
+      </h3>
+    </div>
+  );
+}
+
 function RoleRow({ role }: { role: Role }) {
   return (
     <Reveal>
@@ -56,6 +69,9 @@ function RoleRow({ role }: { role: Role }) {
           {role.detail ? ` - ${role.detail}` : null}
         </h3>
       </div>
+      {role.sub?.map((s) => (
+        <SubRow key={s.title} title={s.title} detail={s.detail} />
+      ))}
     </Reveal>
   );
 }
@@ -72,13 +88,7 @@ function GroupRow({ group }: { group: RoleGroup }) {
         </h3>
       </div>
       {group.roles.map((r) => (
-        <div key={r.title} className="flex row items-start md:text-base text-sm ml-6">
-          <CornerDownRight className="mr-2 w-4 h-4 text-lighttext shrink-0 mt-1" />
-          <h3 className="text-lighttext3">
-            {r.title}
-            {r.detail ? ` - ${r.detail}` : null}
-          </h3>
-        </div>
+        <SubRow key={r.title} title={r.title} detail={r.detail} />
       ))}
     </Reveal>
   );

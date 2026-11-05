@@ -9,6 +9,7 @@ export type Role = {
   logo?: "block-i";
   image?: string; // path under /public, e.g. "/logo.png"
   bg?: string; // background color behind an image logo, so it stands out on the dark page
+  sub?: { title: string; detail?: string }[]; // rows nested beneath this one
 };
 
 // One organization with several unrelated roles, shown as a header with the roles nested under it.
@@ -50,7 +51,7 @@ export const profile = {
 };
 
 export const now: Entry[] = [
-  { title: "Aerospace Engineering - 3.84/4.00 GPA", org: "University of Illinois Urbana-Champaign", href: "https://illinois.edu", color: "#FF5F05", logo: "block-i" },
+  { title: "Aerospace Engineering - 3.84/4.00 GPA", org: "University of Illinois Urbana-Champaign", href: "https://illinois.edu", color: "#FF5F05", logo: "block-i", sub: [{ title: "Minor in Computer Science" }] },
   {
     org: "The Illinois Space Society",
     href: "https://www.illinoisspacesociety.org/",
