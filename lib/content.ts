@@ -32,11 +32,12 @@ export type Project = {
   from: string; // placeholder preview gradient
   to: string;
   images?: MediaItem[]; // shown as a gallery instead of the gradient
-  icon?: "drone" | "satellite";
+  icon?: "drone" | "satellite" | "arm";
 };
 
-// A path under /public for an image, or { video } for a click-to-play video.
-export type MediaItem = string | { video: string };
+// A path under /public for an image, or { video } for a hover-to-play video.
+// thumb is the second of the video shown while it rests (defaults to the first frame).
+export type MediaItem = string | { video: string; thumb?: number };
 
 export const profile = {
   name: "Aneesh Pushparaj",
@@ -57,7 +58,7 @@ export const now: Entry[] = [
     image: "/illinois-space-society.png",
     roles: [
       { title: "Treasurer" },
-      { title: "Spaceshot High-Powered Rocketry Member" },
+      { title: "Spaceshot High-Powered Rocketry Structures & Analysis Member" },
     ],
   },
   { title: "VP of Community and Outreach", org: "Science Olympiad at Illinois", href: "https://sciolyatillinois.org/", color: "#FF5F05", image: "/science-olympiad-illinois.webp", bg: "#ffffff" },
@@ -90,10 +91,25 @@ export const projects: Project[] = [
     to: "#38bdf8",
     icon: "satellite",
     images: [
-      { video: "/projects/lisa-t-deploy.mp4" },
+      { video: "/projects/lisa-t-deploy.mp4", thumb: 6 },
       "/projects/lisa-t-deployed.jpg",
       "/projects/lisa-t-cutaway-1.jpg",
       "/projects/lisa-t-cutaway-2.jpg",
+    ],
+  },
+  {
+    name: "Mechanical Robotic Arm",
+    role: "Solo Project",
+    year: "2026",
+    description: "Designed a servo-driven robotic arm in CAD, with a rotating base, jointed links, and a geared gripper.",
+    from: "#78350f",
+    to: "#fbbf24",
+    icon: "arm",
+    images: [
+      { video: "/projects/arm-animation.mp4" },
+      "/projects/arm-hero.jpg",
+      "/projects/arm-side.jpg",
+      "/projects/arm-gripper.jpg",
     ],
   },
 ];

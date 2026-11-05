@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import DroneIcon from "./DroneIcon";
 import ImageCarousel from "./ImageCarousel";
+import RobotArmIcon from "./RobotArmIcon";
 import SatelliteIcon from "./SatelliteIcon";
 import type { Project } from "@/lib/content";
 
@@ -34,6 +35,8 @@ export default function ProjectCard({ project }: { project: Project }) {
                   <DroneIcon className="absolute inset-0 w-5 h-5 text-red-500" />
                 ) : project.icon === "satellite" ? (
                   <SatelliteIcon className="absolute inset-0 w-5 h-5 text-sky-400" />
+                ) : project.icon === "arm" ? (
+                  <RobotArmIcon className="absolute inset-0 w-5 h-5 text-amber-400" />
                 ) : (
                   <span
                     className="absolute inset-0 rounded-sm transition-all duration-300 ease-out group-hover:translate-x-full group-hover:opacity-0"

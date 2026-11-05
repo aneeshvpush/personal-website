@@ -28,9 +28,18 @@ export default function Home() {
         <div className="mx-auto px-4">
           <Reveal>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
-              {projects.map((p) => (
-                <ProjectCard key={p.name} project={p} />
-              ))}
+              {projects.map((p, i) => {
+                // A lone card on the last row sits centered instead of hugging the left.
+                const loneLast = projects.length % 2 === 1 && i === projects.length - 1;
+                return (
+                  <div
+                    key={p.name}
+                    className={loneLast ? "lg:col-span-2 lg:w-[calc(50%-0.375rem)] lg:justify-self-center" : undefined}
+                  >
+                    <ProjectCard project={p} />
+                  </div>
+                );
+              })}
             </div>
           </Reveal>
         </div>
